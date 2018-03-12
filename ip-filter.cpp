@@ -1,25 +1,18 @@
-﻿<!DOCTYPE HTML>
-<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
-http-equiv="X-UA-Compatible">
+#include <cassert>
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <vector>
 
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<META name="GENERATOR" content="MSHTML 11.00.9600.16428"></HEAD>
-<BODY>
-<PRE>#include &lt;cassert&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-
-// ("",  '.') -&gt; [""]
-// ("11", '.') -&gt; ["11"]
-// ("..", '.') -&gt; ["", "", ""]
-// ("11.", '.') -&gt; ["11", ""]
-// (".11", '.') -&gt; ["", "11"]
-// ("11.22", '.') -&gt; ["11", "22"]
-std::vector&lt;std::string&gt; split(const std::string &amp;str, char d)
+// ("",  '.') -> [""]
+// ("11", '.') -> ["11"]
+// ("..", '.') -> ["", "", ""]
+// ("11.", '.') -> ["11", ""]
+// (".11", '.') -> ["", "11"]
+// ("11.22", '.') -> ["11", "22"]
+std::vector<std::string> split(const std::string &str, char d)
 {
-    std::vector&lt;std::string&gt; r;
+    std::vector<std::string> r;
 
     std::string::size_type start = 0;
     std::string::size_type stop = str.find_first_of(d);
@@ -40,28 +33,28 @@ int main(int argc, char const *argv[])
 {
     try
     {
-        std::vector&lt;std::vector&lt;std::string&gt; &gt; ip_pool;
+        std::vector<std::vector<std::string> > ip_pool;
 
         for(std::string line; std::getline(std::cin, line);)
         {
-            std::vector&lt;std::string&gt; v = split(line, '\t');
+            std::vector<std::string> v = split(line, '\t');
             ip_pool.push_back(split(v.at(0), '.'));
         }
 
         // TODO reverse lexicographically sort
 
-        for(std::vector&lt;std::vector&lt;std::string&gt; &gt;::const_iterator ip = ip_pool.cbegin(); ip != ip_pool.cend(); ++ip)
+        for(std::vector<std::vector<std::string> >::const_iterator ip = ip_pool.cbegin(); ip != ip_pool.cend(); ++ip)
         {
-            for(std::vector&lt;std::string&gt;::const_iterator ip_part = ip-&gt;cbegin(); ip_part != ip-&gt;cend(); ++ip_part)
+            for(std::vector<std::string>::const_iterator ip_part = ip->cbegin(); ip_part != ip->cend(); ++ip_part)
             {
-                if (ip_part != ip-&gt;cbegin())
+                if (ip_part != ip->cbegin())
                 {
-                    std::cout &lt;&lt; ".";
+                    std::cout << ".";
 
                 }
-                std::cout &lt;&lt; *ip_part;
+                std::cout << *ip_part;
             }
-            std::cout &lt;&lt; std::endl;
+            std::cout << std::endl;
         }
 
         // 222.173.235.246
@@ -127,11 +120,10 @@ int main(int argc, char const *argv[])
         // 39.46.86.85
         // 5.189.203.46
     }
-    catch(const std::exception &amp;e)
+    catch(const std::exception &e)
     {
-        std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;
 }
-</PRE></BODY></HTML>
