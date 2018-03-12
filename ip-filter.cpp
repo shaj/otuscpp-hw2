@@ -1,4 +1,4 @@
-#include <cassert>
+﻿#include <cassert>
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -56,7 +56,13 @@ int main(int argc, char const *argv[])
             }
             std::cout << std::endl;
         }
-
+                                   
+/*		
+		std::sort(object.begin(), object.end(),
+          [] (myclass const& a, myclass const& b) { return a.v < b.v; });
+		
+*/		
+		
         // 222.173.235.246
         // 222.130.177.64
         // 222.82.198.61
