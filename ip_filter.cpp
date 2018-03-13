@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
+
+#include "version.h"
 
 // ("",  '.') -> [""]
 // ("11", '.') -> ["11"]
@@ -30,10 +33,24 @@ std::vector<std::string> split(const std::string &str, char d)
     return r;
 }
 
+
+
+// bool ip_cmp(std::vector<std::string> const &a, std::vector<std::string> const &b)
+// {
+//     return true;
+// }
+
+
 int main(int argc, char const *argv[])
 {
     try
     {
+        std::cout << "hw02 ip_filter" << std::endl;
+        std::cout << "Version " << PROJECT_VERSION_MAJOR << ".";
+        std::cout << PROJECT_VERSION_MINOR << ".";
+        std::cout << PROJECT_VERSION_PATCH << std::endl;
+
+
         std::vector<std::vector<std::string> > ip_pool;
 
         for(std::string line; std::getline(std::cin, line);)
@@ -43,6 +60,17 @@ int main(int argc, char const *argv[])
         }
 
         // TODO reverse lexicographically sort
+        std::sort(ip_pool.cbegin(), ip_pool.cend(),
+                [] (std::vector<std::string> const & a, 
+                    std::vector<std::string> const & b) 
+                { 
+                    return true; 
+                }
+                );
+
+        // std::sort(ip_pool.cbegin(), ip_pool.cend(), ip_cmp);
+
+
 
         for(std::vector<std::vector<std::string> >::const_iterator ip = ip_pool.cbegin(); ip != ip_pool.cend(); ++ip)
         {
