@@ -4,8 +4,9 @@ project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-configure_file("${PROJECT_SOURCE_DIR}/version.h.in" "${PROJECT_SOURCE_DIR}/version.h")
+configure_file("version.h.in" "version.h")
 include_directories("${PROJECT_BINARY_DIR}")
+configure_file("${PROJECT_SOURCE_DIR}/ip_filter.tsv" "${PROJECT_BINARY_DIR}/ip_filter.tsv" COPYONLY)
 
 add_executable(ip_filter ip_filter.cpp)
 
