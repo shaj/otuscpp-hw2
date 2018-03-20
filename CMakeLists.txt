@@ -8,7 +8,7 @@ configure_file("version.h.in" "version.h")
 include_directories("${PROJECT_BINARY_DIR}")
 configure_file("${PROJECT_SOURCE_DIR}/ip_filter.tsv" "${PROJECT_BINARY_DIR}/ip_filter.tsv" COPYONLY)
 
-add_executable(ip_filter ip_filter.cpp)
+add_executable(ip_filter main.cpp ip_filter.cpp)
 
 #add_library(helloworld lib.cpp)
 

@@ -31,8 +31,8 @@ int main(int argc, char const *argv[])
 
 			std::vector<ip_t> ip_bpool;
 
-			iplist_read(std::cin, &ip_bpool);
-			if(ip_bpool.lenght == 0)
+			iplist_read(std::cin, ip_bpool);
+			if(ip_bpool.size() == 0)
 			{
 				std::cout << "Empty ip list.\n";
 				return 1;
@@ -40,27 +40,27 @@ int main(int argc, char const *argv[])
 			else
 			{
 			// reverse lexicographically sort
-				iplist_basesort(&ip_bpool);
-				iplist_print(std::cout, &ip_bpool);
+				iplist_basesort(ip_bpool);
+				iplist_print(std::cout, ip_bpool);
 
 				std::vector<ip_t> ip_ex1;
 
-				iplist_filter(&ip_ex1, &ip_bpool,
+				iplist_filter(ip_ex1, ip_bpool,
 					[](auto it){return (it.at(0) == 1);});
-				iplist_print(std::cout, &ip_ex1);
+				iplist_print(std::cout, ip_ex1);
 
 				ip_ex1.clear();
-				iplist_filter(&ip_ex1, &ip_bpool,
+				iplist_filter(ip_ex1, ip_bpool,
 					[](auto it){return (it.at(0) == 46) && (it.at(1) == 70);});
-				iplist_print(std::cout, &ip_ex1);
+				iplist_print(std::cout, ip_ex1);
 
 				ip_ex1.clear();
-				iplist_filter(&ip_ex1, &ip_bpool,
+				iplist_filter(ip_ex1, ip_bpool,
 					[](auto it)
 					{
-						return std::find_if(it.begin(), it.end(), [](auto b){return b == 46;});
+						return std::find_if(it.begin(), it.end(), [](auto b){return b == 46;}) != it.end();
 					});
-				iplist_print(std::cout, &ip_ex1);
+				iplist_print(std::cout, ip_ex1);
 			}
 		}
 		catch(const std::exception &e)

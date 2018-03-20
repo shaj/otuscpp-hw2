@@ -36,9 +36,9 @@ std::vector<std::string> split(const std::string &str, char d)
 }
 
 
-void iplist_read(std::istream &is, std::vector<ip_t> &v)
+void iplist_read(std::istream &is, std::vector<ip_t> &bv)
 {
-    for(std::string line; std::getline(std::cin, line);)
+    for(std::string line; std::getline(is, line);)
     {
         std::vector<std::string> v = split(line, '\t');
         v = split(v.at(0), '.');
@@ -60,7 +60,7 @@ void iplist_read(std::istream &is, std::vector<ip_t> &v)
         vuc[1] = b2;
         vuc[0] = b3;
 
-        ip_bpool.push_back(vuc);
+        bv.push_back(vuc);
     }
 }	
 
@@ -68,7 +68,9 @@ void iplist_read(std::istream &is, std::vector<ip_t> &v)
 void iplist_basesort(std::vector<ip_t> &v)
 {
     // TODO reverse lexicographically sort
-    std::sort(ip_bpool.begin(), ip_bpool.end(), std::greater<decltype(ip_bpool)::value_type>());
+    // std::sort(v.begin(), v.end(), std::greater<decltype(v)::value_type>());
+    std::sort(v.begin(), v.end());
+    std::reverse(v.begin(), v.end());
 }
 
 
@@ -82,9 +84,9 @@ void iplist_print(std::ostream &os, std::vector<ip_t> &v)
 }
 
 
-template< class UnaryPredicate >
-void iplist_filter(std::vector<ip_t> &out_v, std::vector<ip_t> &base_v, UnaryPredicate p);
-{
-        std::copy_if(ip_bpool.begin(), ip_bpool.end(), std::back_inserter(ip_ex1),
-        	p);
-}
+// template< class UnaryPredicate >
+// void iplist_filter(std::vector<ip_t> &out_v, std::vector<ip_t> &base_v, UnaryPredicate p);
+// {
+//         std::copy_if(ip_bpool.begin(), ip_bpool.end(), std::back_inserter(ip_ex1),
+//         	p);
+// }
