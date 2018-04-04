@@ -10,6 +10,8 @@
 
 typedef std::vector<unsigned char> ip_t;
 
+std::vector<std::string> split(const std::string &str, char d);
+
 void iplist_read(std::istream &is, std::vector<ip_t> &v);
 void iplist_basesort(std::vector<ip_t> &v);
 void iplist_print(std::ostream &os, std::vector<ip_t> &v);
