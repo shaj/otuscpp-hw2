@@ -44,5 +44,6 @@ include (CPack)
 
 enable_testing()
 
-add_test(split test_main)
-add_test(stream_reader test_main)
+add_test(NAME test_main 
+		COMMAND test_main )
+
