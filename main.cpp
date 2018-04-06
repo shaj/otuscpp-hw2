@@ -19,6 +19,11 @@ int main(int argc, char const *argv[])
 			std::cout << PROJECT_VERSION_MINOR << ".";
 			std::cout << PROJECT_VERSION_PATCH << std::endl;
 		}
+		else if((std::string(argv[1]) == "-d")
+			|| (std::string(argv[1]) == "--debug"))
+		{
+			std::cout << "Usage: ...\n";
+		}
 		else
 		{
 			std::cout << "Usage: ...\n";
