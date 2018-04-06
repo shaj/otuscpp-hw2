@@ -1,0 +1,92 @@
+\hypertarget{ip__filter_8h}{\section{Файл ip\-\_\-filter.\-h}
+\label{ip__filter_8h}\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$array$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+Граф включаемых заголовочных файлов для ip\-\_\-filter.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ip__filter_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{ip__filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::array\\*
+$<$ std\-::size\-\_\-t, 4 $>$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{ip__filter_8h_a5d67634c85a0d90fa46ad22c5740915c}{split} (const std\-::string \&str, char d)
+\item 
+void \hyperlink{ip__filter_8h_a1ca671ef7008b2ca3aead135c9e72d2a}{iplist\-\_\-read} (std\-::istream \&is, std\-::vector$<$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t} $>$ \&v)
+\item 
+void \hyperlink{ip__filter_8h_aeff1e0432eb5b4938e8956f988ee2bcb}{iplist\-\_\-basesort} (std\-::vector$<$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t} $>$ \&v)
+\item 
+void \hyperlink{ip__filter_8h_af2cd983454a6c88e3e114902da62254b}{iplist\-\_\-print} (std\-::ostream \&os, std\-::vector$<$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t} $>$ \&v)
+\item 
+{\footnotesize template$<$class Unary\-Predicate $>$ }\\void \hyperlink{ip__filter_8h_a7a2e75e6adf6d39caebb11c383b352e4}{iplist\-\_\-filter} (std\-::vector$<$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t} $>$ \&out\-\_\-v, std\-::vector$<$ \hyperlink{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{ip\-\_\-t} $>$ \&base\-\_\-v, Unary\-Predicate p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Типы}
+\hypertarget{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!ip\-\_\-t@{ip\-\_\-t}}
+\index{ip\-\_\-t@{ip\-\_\-t}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{ip\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::array$<$std\-::size\-\_\-t, 4$>$ {\bf ip\-\_\-t}}}\label{ip__filter_8h_a2756a9a1f60ab937cb92e5ed91da5084}
+
+
+\subsection{Функции}
+\hypertarget{ip__filter_8h_aeff1e0432eb5b4938e8956f988ee2bcb}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!iplist\-\_\-basesort@{iplist\-\_\-basesort}}
+\index{iplist\-\_\-basesort@{iplist\-\_\-basesort}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{iplist\-\_\-basesort}]{\setlength{\rightskip}{0pt plus 5cm}void iplist\-\_\-basesort (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf ip\-\_\-t} $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{ip__filter_8h_aeff1e0432eb5b4938e8956f988ee2bcb}
+\hypertarget{ip__filter_8h_a7a2e75e6adf6d39caebb11c383b352e4}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!iplist\-\_\-filter@{iplist\-\_\-filter}}
+\index{iplist\-\_\-filter@{iplist\-\_\-filter}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{iplist\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Unary\-Predicate $>$ void iplist\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf ip\-\_\-t} $>$ \&}]{out\-\_\-v, }
+\item[{std\-::vector$<$ {\bf ip\-\_\-t} $>$ \&}]{base\-\_\-v, }
+\item[{Unary\-Predicate}]{p}
+\end{DoxyParamCaption}
+)}}\label{ip__filter_8h_a7a2e75e6adf6d39caebb11c383b352e4}
+\hypertarget{ip__filter_8h_af2cd983454a6c88e3e114902da62254b}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!iplist\-\_\-print@{iplist\-\_\-print}}
+\index{iplist\-\_\-print@{iplist\-\_\-print}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{iplist\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void iplist\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{std\-::vector$<$ {\bf ip\-\_\-t} $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{ip__filter_8h_af2cd983454a6c88e3e114902da62254b}
+\hypertarget{ip__filter_8h_a1ca671ef7008b2ca3aead135c9e72d2a}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!iplist\-\_\-read@{iplist\-\_\-read}}
+\index{iplist\-\_\-read@{iplist\-\_\-read}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{iplist\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void iplist\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{is, }
+\item[{std\-::vector$<$ {\bf ip\-\_\-t} $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{ip__filter_8h_a1ca671ef7008b2ca3aead135c9e72d2a}
+\hypertarget{ip__filter_8h_a5d67634c85a0d90fa46ad22c5740915c}{\index{ip\-\_\-filter.\-h@{ip\-\_\-filter.\-h}!split@{split}}
+\index{split@{split}!ip_filter.h@{ip\-\_\-filter.\-h}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ split (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str, }
+\item[{char}]{d}
+\end{DoxyParamCaption}
+)}}\label{ip__filter_8h_a5d67634c85a0d90fa46ad22c5740915c}

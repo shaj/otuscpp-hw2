@@ -1,9 +1,0 @@
-Package: ip_filter
-Version: 0.0.3
-Section: devel
-Priority: optional
-Architecture: amd64
-Installed-Size: 98
-Maintainer: kolobrod2002@yandex.ru
-Description: ip_filter built using CMake
-
