@@ -49,6 +49,7 @@ int main(int argc, char const *argv[])
 				iplist_print(std::cout, ip_bpool);
 
 				std::vector<ip_t> ip_ex1;
+				ip_ex1.reserve(50);
 
 				iplist_filter(ip_ex1, ip_bpool,
 					[](auto it){return (it.at(0) == 1);});
