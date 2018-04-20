@@ -6,7 +6,6 @@
 #include "ip_filter.h"
 
 
-
 int main(int argc, char const *argv[])
 {
 	if(argc > 1)
@@ -19,11 +18,6 @@ int main(int argc, char const *argv[])
 			std::cout << PROJECT_VERSION_MINOR << ".";
 			std::cout << PROJECT_VERSION_PATCH << std::endl;
 		}
-		else if((std::string(argv[1]) == "-d")
-			|| (std::string(argv[1]) == "--debug"))
-		{
-			std::cout << "Usage: ...\n";
-		}
 		else
 		{
 			std::cout << "Usage: ...\n";
@@ -33,10 +27,7 @@ int main(int argc, char const *argv[])
 	{
 		try
 		{
-
-			// std::vector<ip_t> ip_bpool;
-
-			auto ip_bpool = iplist_read(std::cin);
+			auto ip_bpool = std::move(iplist_read(std::cin));
 			if(ip_bpool.size() == 0)
 			{
 				std::cerr << "Empty ip list.\n";
@@ -45,7 +36,8 @@ int main(int argc, char const *argv[])
 			else
 			{
 				auto ip_sorted = std::move(iplist_basesort(ip_bpool));
-				iplist_print(std::cout, ip_sorted, true);
+				
+				iplist_print(std::cout, ip_sorted, [](auto it){return true;});
 
 				iplist_print(std::cout, ip_sorted, [](auto it){return (it.at(0) == 1);});
 				iplist_print(std::cout, ip_sorted, 

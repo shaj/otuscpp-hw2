@@ -9,13 +9,13 @@
 #include "version.h"
 #include "ip_filter.h"
 
+
 // ("",  '.') -> [""]
 // ("11", '.') -> ["11"]
 // ("..", '.') -> ["", "", ""]
 // ("11.", '.') -> ["11", ""]
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
-
 std::vector<std::string> split(const std::string &str, char d)
 {
 	std::vector<std::string> r;
@@ -36,43 +36,50 @@ std::vector<std::string> split(const std::string &str, char d)
 }
 
 
-void iplist_read(std::istream &is, std::vector<ip_t> &bv)
+std::vector<ip_t> iplist_read(std::istream &is)
 {
+	std::vector<ip_t> bv;
 	for(std::string line; std::getline(is, line);)
 	{
 		std::vector<std::string> v = split(line, '\t');
-		v = split(v.at(0), '.');
+		v = std::move(split(v.at(0), '.'));
 
-//            unsigned int id;
+		// unsigned int id;
 		unsigned char b0, b1, b2, b3;
 
 		b3 = stoi(v.at(0));
 		b2 = stoi(v.at(1));
 		b1 = stoi(v.at(2));
 		b0 = stoi(v.at(3));
-//            id = (b0 & 0xff) | ((b1 & 0xff) << 8)
-//                | ((b2 & 0xff) << 16) | ((b3 & 0xff) << 24);
+		// id = (b0 & 0xff) | ((b1 & 0xff) << 8)
+		// 		| ((b2 & 0xff) << 16) | ((b3 & 0xff) << 24);
 
 		bv.push_back(ip_t {b3, b2, b1, b0});
 	}
+	return bv;
 }	
 
 
-void iplist_basesort(std::vector<ip_t> &v)
+std::vector<ip_t> iplist_basesort(std::vector<ip_t> &v)
 {
-	// TODO reverse lexicographically sort
-	// std::sort(v.begin(), v.end(), std::greater<decltype(v)::value_type>());
-	std::sort(v.begin(), v.end());
-	std::reverse(v.begin(), v.end());
+	std::sort(std::begin(v), std::end(v));
+	std::reverse(std::begin(v), std::end(v));
+	return v;
 }
 
 
-void iplist_print(std::ostream &os, std::vector<ip_t> &v)
+
+std::ostream& std::operator <<(std::ostream& os, const ip_t &ip)
 {
-	for(auto it: v)
-	{
-		os << int(it[0]) << "." << int(it[1]) << "." << int(it[2]) << "." << int(it[3]);
-		os << std::endl;
-	}
+	os << static_cast<int>(ip.at(0))
+		<< "."
+		<< static_cast<int>(ip.at(1))
+		<< "."
+		<< static_cast<int>(ip.at(2))
+		<< "."
+		<< static_cast<int>(ip.at(3));
+
+	return os;
 }
+
 
