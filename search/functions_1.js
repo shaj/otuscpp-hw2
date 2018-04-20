@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['iplist_5fbasesort',['iplist_basesort',['../ip__filter_8cpp.html#aeff1e0432eb5b4938e8956f988ee2bcb',1,'iplist_basesort(std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp'],['../ip__filter_8h.html#aeff1e0432eb5b4938e8956f988ee2bcb',1,'iplist_basesort(std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp']]],
-  ['iplist_5ffilter',['iplist_filter',['../ip__filter_8h.html#a7a2e75e6adf6d39caebb11c383b352e4',1,'ip_filter.h']]],
-  ['iplist_5fprint',['iplist_print',['../ip__filter_8cpp.html#af2cd983454a6c88e3e114902da62254b',1,'iplist_print(std::ostream &amp;os, std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp'],['../ip__filter_8h.html#af2cd983454a6c88e3e114902da62254b',1,'iplist_print(std::ostream &amp;os, std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp']]],
-  ['iplist_5fread',['iplist_read',['../ip__filter_8cpp.html#ab7ad0ebcffebf8d341975e1e53fcf7b8',1,'iplist_read(std::istream &amp;is, std::vector&lt; ip_t &gt; &amp;bv):&#160;ip_filter.cpp'],['../ip__filter_8h.html#a1ca671ef7008b2ca3aead135c9e72d2a',1,'iplist_read(std::istream &amp;is, std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp']]]
+  ['iplist_5fbasesort',['iplist_basesort',['../ip__filter_8cpp.html#a81175049e58c44b4db54f55b72a3f9ef',1,'iplist_basesort(std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp'],['../ip__filter_8h.html#a81175049e58c44b4db54f55b72a3f9ef',1,'iplist_basesort(std::vector&lt; ip_t &gt; &amp;v):&#160;ip_filter.cpp']]],
+  ['iplist_5fprint',['iplist_print',['../ip__filter_8h.html#a46b6076176aeea57ee36ebb0d3b9800d',1,'ip_filter.h']]],
+  ['iplist_5fread',['iplist_read',['../ip__filter_8cpp.html#a8d6412020382b109d16b6330b32ddc75',1,'iplist_read(std::istream &amp;is):&#160;ip_filter.cpp'],['../ip__filter_8h.html#a8d6412020382b109d16b6330b32ddc75',1,'iplist_read(std::istream &amp;is):&#160;ip_filter.cpp']]]
 ];

@@ -7,20 +7,24 @@
 
 var indexSectionsWithContent =
 {
-  0: "bimpstv",
-  1: "imtv",
-  2: "bims",
-  3: "i",
-  4: "bp"
+  0: "bimoprstv",
+  1: "s",
+  2: "imrtv",
+  3: "bimos",
+  4: "i",
+  5: "bp",
+  6: "r"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions",
-  3: "typedefs",
-  4: "defines"
+  1: "namespaces",
+  2: "files",
+  3: "functions",
+  4: "typedefs",
+  5: "defines",
+  6: "pages"
 };
 
 function convertToId(search)
