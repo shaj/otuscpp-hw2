@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
       <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
       <li><a href="pages.html"><span>Описания</span></a></li>
       <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
       <li class="current"><a href="files.html"><span>Файлы</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Макросы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Макросы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,11 +96,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="ip__filter_8h.html#ae2e6eb0c9bd1e9cd9f1828e3e74b3cc0">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="ip__filter_8h.html#ae2e6eb0c9bd1e9cd9f1828e3e74b3cc0">ip_t</a> = std::vector&lt;std::size_t&gt;;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="ip__filter_8h.html#aac3d6ff8dc5326896ab4c713834bf286">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="ip__filter_8h.html#aac3d6ff8dc5326896ab4c713834bf286">ip_t</a> = std::array&lt;int, 4&gt;;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacestd.html">   14</a></span>&#160;<span class="keyword">namespace </span>std { <span class="comment">// Взято отсюда: https://ru.stackoverflow.com/a/267766</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;std::ostream&amp; <a class="code" href="namespacestd.html#ae9c8a42c9762f1951f5bb64835359548">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="ip__filter_8h.html#ae2e6eb0c9bd1e9cd9f1828e3e74b3cc0">ip_t</a> &amp;ip);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;std::ostream&amp; <a class="code" href="namespacestd.html#ae9c8a42c9762f1951f5bb64835359548">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="ip__filter_8h.html#aac3d6ff8dc5326896ab4c713834bf286">ip_t</a> &amp;ip);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
@@ -107,25 +108,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="ip__filter_8h.html#a5d67634c85a0d90fa46ad22c5740915c">split</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keywordtype">char</span> d);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;std::vector&lt;ip_t&gt; <a class="code" href="ip__filter_8h.html#a8d6412020382b109d16b6330b32ddc75">iplist_read</a>(std::istream &amp;is);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;std::vector&lt;ip_t&gt; <a class="code" href="ip__filter_8h.html#a81175049e58c44b4db54f55b72a3f9ef">iplist_basesort</a>(std::vector&lt;ip_t&gt; &amp;v);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> P&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="ip__filter_8h.html#a46b6076176aeea57ee36ebb0d3b9800d">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ip__filter_8h.html#a46b6076176aeea57ee36ebb0d3b9800d">iplist_print</a>(std::ostream &amp;os, <span class="keyword">const</span> std::vector&lt;ip_t&gt; &amp;v, P p)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::ostream_iterator&lt;ip_t&gt; out_it (os,<span class="stringliteral">&quot;\n&quot;</span>);   </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::copy_if(</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::begin(v), </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::end(v), </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::ostream_iterator&lt;ip_t&gt; (os,<span class="stringliteral">&quot;\n&quot;</span>), </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        p);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="ttc" id="ip__filter_8h_html_a5d67634c85a0d90fa46ad22c5740915c"><div class="ttname"><a href="ip__filter_8h.html#a5d67634c85a0d90fa46ad22c5740915c">split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(const std::string &amp;str, char d)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:19</div></div>
-<div class="ttc" id="namespacestd_html_ae9c8a42c9762f1951f5bb64835359548"><div class="ttname"><a href="namespacestd.html#ae9c8a42c9762f1951f5bb64835359548">std::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const ip_t &amp;ip)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:72</div></div>
-<div class="ttc" id="ip__filter_8h_html_a81175049e58c44b4db54f55b72a3f9ef"><div class="ttname"><a href="ip__filter_8h.html#a81175049e58c44b4db54f55b72a3f9ef">iplist_basesort</a></div><div class="ttdeci">std::vector&lt; ip_t &gt; iplist_basesort(std::vector&lt; ip_t &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:63</div></div>
-<div class="ttc" id="ip__filter_8h_html_a8d6412020382b109d16b6330b32ddc75"><div class="ttname"><a href="ip__filter_8h.html#a8d6412020382b109d16b6330b32ddc75">iplist_read</a></div><div class="ttdeci">std::vector&lt; ip_t &gt; iplist_read(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:39</div></div>
-<div class="ttc" id="ip__filter_8h_html_a46b6076176aeea57ee36ebb0d3b9800d"><div class="ttname"><a href="ip__filter_8h.html#a46b6076176aeea57ee36ebb0d3b9800d">iplist_print</a></div><div class="ttdeci">void iplist_print(std::ostream &amp;os, const std::vector&lt; ip_t &gt; &amp;v, P p)</div><div class="ttdef"><b>Definition:</b> ip_filter.h:27</div></div>
-<div class="ttc" id="ip__filter_8h_html_ae2e6eb0c9bd1e9cd9f1828e3e74b3cc0"><div class="ttname"><a href="ip__filter_8h.html#ae2e6eb0c9bd1e9cd9f1828e3e74b3cc0">ip_t</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; ip_t</div><div class="ttdef"><b>Definition:</b> ip_filter.h:12</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ip__filter_8h.html#aeff1e0432eb5b4938e8956f988ee2bcb">iplist_basesort</a>(std::vector&lt;ip_t&gt; &amp;v);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ip__filter_8h.html#a37b19d88f2ce5c23ae167eda05ccf22b">iplist_print</a>(std::ostream &amp;os, <span class="keyword">const</span> std::vector&lt;ip_t&gt; &amp;v);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> P&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="ip__filter_8h.html#ac82cada41861921e1f08bcd9cde7a6aa">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ip__filter_8h.html#ac82cada41861921e1f08bcd9cde7a6aa">iplist_print_if</a>(std::ostream &amp;os, <span class="keyword">const</span> std::vector&lt;ip_t&gt; &amp;v, P p)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::ostream_iterator&lt;ip_t&gt; out_it (os,<span class="stringliteral">&quot;\n&quot;</span>);   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::copy_if(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::begin(v), </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::end(v), </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::ostream_iterator&lt;ip_t&gt; (os,<span class="stringliteral">&quot;\n&quot;</span>), </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        p);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classparser__error.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classparser__error.html">parser_error</a> : <span class="keyword">public</span> std::logic_error</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classparser__error.html#a9c132c8dba78d432acbee20dedecaad9">   42</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classparser__error.html#a9c132c8dba78d432acbee20dedecaad9">parser_error</a>(<span class="keyword">const</span> std::string &amp; arg) : std::logic_error(arg)   { }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="ttc" id="ip__filter_8h_html_a5d67634c85a0d90fa46ad22c5740915c"><div class="ttname"><a href="ip__filter_8h.html#a5d67634c85a0d90fa46ad22c5740915c">split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(const std::string &amp;str, char d)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:14</div></div>
+<div class="ttc" id="ip__filter_8h_html_a37b19d88f2ce5c23ae167eda05ccf22b"><div class="ttname"><a href="ip__filter_8h.html#a37b19d88f2ce5c23ae167eda05ccf22b">iplist_print</a></div><div class="ttdeci">void iplist_print(std::ostream &amp;os, const std::vector&lt; ip_t &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:81</div></div>
+<div class="ttc" id="namespacestd_html_ae9c8a42c9762f1951f5bb64835359548"><div class="ttname"><a href="namespacestd.html#ae9c8a42c9762f1951f5bb64835359548">std::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const ip_t &amp;ip)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:74</div></div>
+<div class="ttc" id="classparser__error_html"><div class="ttname"><a href="classparser__error.html">parser_error</a></div><div class="ttdef"><b>Definition:</b> ip_filter.h:39</div></div>
+<div class="ttc" id="ip__filter_8h_html_aeff1e0432eb5b4938e8956f988ee2bcb"><div class="ttname"><a href="ip__filter_8h.html#aeff1e0432eb5b4938e8956f988ee2bcb">iplist_basesort</a></div><div class="ttdeci">void iplist_basesort(std::vector&lt; ip_t &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:66</div></div>
+<div class="ttc" id="ip__filter_8h_html_aac3d6ff8dc5326896ab4c713834bf286"><div class="ttname"><a href="ip__filter_8h.html#aac3d6ff8dc5326896ab4c713834bf286">ip_t</a></div><div class="ttdeci">std::array&lt; int, 4 &gt; ip_t</div><div class="ttdef"><b>Definition:</b> ip_filter.h:12</div></div>
+<div class="ttc" id="ip__filter_8h_html_a8d6412020382b109d16b6330b32ddc75"><div class="ttname"><a href="ip__filter_8h.html#a8d6412020382b109d16b6330b32ddc75">iplist_read</a></div><div class="ttdeci">std::vector&lt; ip_t &gt; iplist_read(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:34</div></div>
+<div class="ttc" id="classparser__error_html_a9c132c8dba78d432acbee20dedecaad9"><div class="ttname"><a href="classparser__error.html#a9c132c8dba78d432acbee20dedecaad9">parser_error::parser_error</a></div><div class="ttdeci">parser_error(const std::string &amp;arg)</div><div class="ttdef"><b>Definition:</b> ip_filter.h:42</div></div>
+<div class="ttc" id="ip__filter_8h_html_ac82cada41861921e1f08bcd9cde7a6aa"><div class="ttname"><a href="ip__filter_8h.html#ac82cada41861921e1f08bcd9cde7a6aa">iplist_print_if</a></div><div class="ttdeci">void iplist_print_if(std::ostream &amp;os, const std::vector&lt; ip_t &gt; &amp;v, P p)</div><div class="ttdef"><b>Definition:</b> ip_filter.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
