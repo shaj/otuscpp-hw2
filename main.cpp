@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 	{
 		try
 		{
-			auto ip_bpool = std::move(iplist_read(std::cin));
+			auto ip_bpool = iplist_read(std::cin);
 			if(ip_bpool.size() == 0)
 			{
 				std::cerr << "Empty ip list.\n";
@@ -35,17 +35,17 @@ int main(int argc, char const *argv[])
 			}
 			else
 			{
-				auto ip_sorted = std::move(iplist_basesort(ip_bpool));
+				iplist_basesort(ip_bpool);
 				
-				iplist_print(std::cout, ip_sorted, [](auto it){return true;});
+				iplist_print(std::cout, ip_bpool);
 
-				iplist_print(std::cout, ip_sorted, [](auto it){return (it.at(0) == 1);});
-				iplist_print(std::cout, ip_sorted, 
+				iplist_print_if(std::cout, ip_bpool, [](auto it){return (it.at(0) == 1);});
+				iplist_print_if(std::cout, ip_bpool, 
 					[](auto it){return (it.at(0) == 46) && (it.at(1) == 70);});
-				iplist_print(std::cout, ip_sorted,
+				iplist_print_if(std::cout, ip_bpool,
 					[](auto it)
 					{
-						return std::find_if(it.begin(), it.end(), [](auto b){return b == 46;}) != it.end();
+						return std::any_of(it.begin(), it.end(), [](auto b){return b == 46;});
 					});
 			}
 		}

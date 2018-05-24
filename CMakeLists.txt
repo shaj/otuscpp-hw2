@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+set(PATCH_VERSION "1")
+if($ENV{TRAVIS_BUILD_NUMBER})
+  set(PATCH_VERSION $ENV{TRAVIS_BUILD_NUMBER})
+endif()
+
+
+project(ip_filter VERSION 0.0.${PATCH_VERSION})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 configure_file("${PROJECT_SOURCE_DIR}/version.h.in" "${PROJECT_BINARY_DIR}/version.h")
 configure_file("${PROJECT_SOURCE_DIR}/ip_filter.tsv" "${PROJECT_BINARY_DIR}/ip_filter.tsv" COPYONLY)
@@ -24,10 +31,13 @@ set_target_properties(test_main PROPERTIES
 )
 
 
-target_link_libraries(test_main ${Boost_LIBRARIES})
+target_link_libraries(test_main 
+		${Boost_LIBRARIES}
+		${OPENSSL_LIBRARIES}
+)
 
-target_include_directories(ip_filter PUBLIC "${PROJECT_BINARY_DIR}")
-target_include_directories(test_main PUBLIC "${PROJECT_BINARY_DIR}")
+target_include_directories(ip_filter PRIVATE "${PROJECT_BINARY_DIR}")
+target_include_directories(test_main PRIVATE "${PROJECT_BINARY_DIR}")
 
 
 install(TARGETS ip_filter RUNTIME DESTINATION bin)
@@ -45,5 +55,5 @@ include (CPack)
 enable_testing()
 
 add_test(NAME test_main 
-		COMMAND test_main )
+		COMMAND test_main)
 
